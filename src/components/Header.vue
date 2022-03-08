@@ -25,43 +25,43 @@ export default {
 
           navbarArray: [
               {
-                  href: '',
+                  href: '#',
                   text: 'characters'
               },
               {
-                  href: '',
+                  href: '#',
                   text: 'comics'
               },
               {
-                  href: '',
+                  href: '#',
                   text: 'movies'
               },
               {
-                  href: '',
+                  href: '#',
                   text: 'tv'
               },
               {
-                  href: '',
+                  href: '#',
                   text: 'games'
               },
               {
-                  href: '',
+                  href: '#',
                   text: 'collectibles'
               },
               {
-                  href: '',
+                  href: '#',
                   text: 'videos'
               },
               {
-                  href: '',
+                  href: '#',
                   text: 'fans'
               },
               {
-                  href: '',
+                  href: '#',
                   text: 'news'
               },
               {
-                  href: '',
+                  href: '#',
                   text: 'shop'
               }
           ],

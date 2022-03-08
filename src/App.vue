@@ -56,4 +56,8 @@ export default {
         margin: 0 auto;
         max-width: 1300px;
     }
+
+    .container-small{
+      max-width: 450px;
+    }
 </style>
