@@ -6,7 +6,8 @@
             </figure>
             <nav class="navbar">
                 <ul>
-                    <li v-for="(element, i) in navbarArray" :key="i" class="navbar-items">
+                    <li v-for="(element, i) in navbarArray" :key="i" class="navbar-items"
+                        :class="activeNavElement == i ? 'active' : ''" @click="activeNavElement = i">
                         <a :href="element.href">{{ element.text }}</a>
                     </li>
                 </ul>
@@ -20,6 +21,8 @@ export default {
   name: 'myHeader',
   data(){
       return{
+          activeNavElement: null,
+
           navbarArray: [
               {
                   href: '',
@@ -106,10 +109,11 @@ export default {
         line-height: 117px;
 
         &:hover, &.active{
-            color: #0282F9;
             border-bottom: 5px solid #0282F9;
+            a {
+                color: #0282F9; 
+            }
         }
     }
-
 
 </style>
