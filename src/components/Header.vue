@@ -81,11 +81,13 @@ export default {
         justify-content: space-between;
         align-items: center;
         height: 100%;
+        padding: 0 10px;
     }
 
     .main-logo{
         width: 78px;
         height: 78px;
+        flex-shrink: 0;
     }
 
     .navbar ul{
