@@ -3,35 +3,11 @@
         <div class="footer-header">
           <div class="container">
             <ul>
-              <li class="merch-link">
+              <li v-for="(element, i) in merchLinkArray" :key="i" class="merch-link">
                 <figure>
-                  <img src="../assets/img/buy-comics-digital-comics.png" alt="">
+                  <img :src="require('../assets/img/' + element.image)" alt="">
                 </figure>
-                <a href="">digital comics</a>
-              </li>
-              <li class="merch-link">
-                <figure>
-                    <img src="../assets/img/buy-comics-merchandise.png" alt="">
-                </figure>
-                <a href="">dc merchandise</a>
-              </li>
-              <li class="merch-link">
-                <figure>
-                    <img src="../assets/img/buy-comics-subscriptions.png" alt="">
-                </figure>
-                <a href="">subscription</a>
-              </li>
-              <li class="merch-link">
-                <figure>
-                    <img src="../assets/img/buy-comics-shop-locator.png" alt="">
-                </figure>
-                <a href="">comic shop locator</a>
-              </li>
-              <li class="merch-link">
-                <figure>
-                    <img src="../assets/img/buy-dc-power-visa.svg" alt="">
-                </figure>
-                <a href="">dc power visa</a>
+                <a :href="element.href">{{ element.text }}</a>
               </li>
             </ul>
           </div>
@@ -44,6 +20,37 @@
 <script>
 export default {
   name: 'myFooter',
+  data(){
+      return{
+          merchLinkArray: [
+              {
+                  image: 'buy-comics-digital-comics.png',
+                  href: '#',
+                  text: 'digital comics',
+              },
+              {
+                  image: 'buy-comics-merchandise.png',
+                  href: '#',
+                  text: 'dc merchandise',
+              },
+              {
+                  image: 'buy-comics-subscriptions.png',
+                  href: '#',
+                  text: 'subscription',
+              },
+              {
+                  image: 'buy-comics-shop-locator.png',
+                  href: '#',
+                  text: 'comic shop locator',
+              },
+              {
+                  image: 'buy-dc-power-visa.svg',
+                  href: '#',
+                  text: 'dc power visa',
+              },
+          ],
+      }
+  },
 }
 </script>
 
@@ -64,7 +71,7 @@ export default {
 
     .merch-link{
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-start;
         align-items: center;
         gap: 10px;
 
@@ -75,8 +82,8 @@ export default {
             font-weight: 500;
 
             &:hover{
-            transform: scale(1.05, 1.05);
-        }
+                transform: scale(1.05, 1.05);
+            }
         }
     }
 
