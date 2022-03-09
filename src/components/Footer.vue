@@ -25,16 +25,32 @@
                             {{ item.text }}
                         </li>
                     </ul>
-                </div>
-                <div class="logo-wrapper">
-                    <!-- <figure>
-                        <img src="../assets/img/dc-logo-bg.png" alt="">
-                    </figure> -->
+
                 </div>
             </div>
         </div>
 
-        <div class="footer-social"></div>
+        <div class="footer-social">
+            <div class="container">
+                <div>
+                    <button class="sign-up">
+                        <span>sign-up now!</span>
+                    </button>
+                </div>
+                <div class="social-section">
+                    <button class="follow">
+                        <span>follow us</span>
+                    </button>
+                    <ul>
+                        <li v-for="(icon, i) in socialIcons" :key="i" class="social-icon">
+                            <a :href="icon.href">
+                                <img :src="icon.image" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
 </template>
 
@@ -168,6 +184,28 @@ export default {
                   ],
               },
           ],
+          socialIcons: [
+              {
+                  image: require('../assets/img/footer-facebook.png'),
+                  href: '#',
+              },
+              {
+                  image: require('../assets/img/footer-twitter.png'),
+                  href: '#',
+              },
+              {
+                  image: require('../assets/img/footer-youtube.png'),
+                  href: '#',
+              },
+              {
+                  image: require('../assets/img/footer-pinterest.png'),
+                  href: '#',
+              },
+              {
+                  image: require('../assets/img/footer-periscope.png'),
+                  href: '#',
+              },
+          ],
       }
   },
 }
@@ -181,10 +219,10 @@ export default {
 
     & .container{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 30px;
 
         & > ul{
             display: contents;
@@ -203,15 +241,16 @@ export default {
 
     .merch-link{
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-start;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
 
         & a{
             text-transform: uppercase;
             color: white;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 500;
+            white-space: nowrap;
 
             &:hover{
                 transform: scale(1.05, 1.05);
@@ -220,14 +259,14 @@ export default {
     }
 
     .list-title{
-        font-size: 16px;
+        font-size: 15px;
         margin-bottom: 15px;
         text-transform: uppercase;
         color: white;
     }
 
     .list-item{
-        font-size: 14px;
+        font-size: 12px;
         margin-bottom: 10px;
         color: white;
         opacity: 0.6;
@@ -239,7 +278,7 @@ export default {
     }
 
     .container-small{
-        padding: 40px 10px 60px 0px;
+        padding: 40px 0px 60px 10px;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
@@ -253,10 +292,65 @@ export default {
     }
 
     .footer-link{
-        background-image: url(../assets/img/footer-bg.jpg);
+        background-image: url(../assets/img/dc-logo-bg.png) ,url(../assets/img/footer-bg.jpg);
         background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+        background-size: calc(30px + 40vw) , cover;
+        background-position: 80% center ,center;
+    }
+
+    .footer-social{
+        height: 110px;
+        background-color: #303030;
+        color: white;
+
+        & ul{
+            display: contents;
+        }
+
+        & .container{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            padding: 0 10px;
+        }
+    }
+
+    .social-section{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-grow: 1;
+        gap: 15px;
+    }
+
+    .sign-up{
+        color: white;
+        border: 2px solid #0282F9;
+        padding: 15px;
+
+        &:hover{
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #0282F9;
+            transition: all 500ms;
+        }
+    }
+
+    .follow{
+        color: #0282F9;
+        border: none;
+    }
+
+    .sign-up, .follow{
+        text-transform: uppercase;
+        background-color: transparent;
+        font-size: 18px;
+        font-weight: 550;
+    }
+
+    .social-icon:hover{
+        transform: scale(1.05, 1.05);
     }
 
 </style>
