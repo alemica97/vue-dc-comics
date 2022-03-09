@@ -121,6 +121,11 @@ export default {
             padding: 8px 25px;
             font-size: 12px;
         }
+
+        & button:hover{
+            cursor: pointer;
+            transform: scale(1.05, 1.05);
+        }
     }
 
     .container{
