@@ -3,7 +3,7 @@
     <!-- header and nav bar  -->
     <myHeader />
     <!-- main -->
-    <myMain />
+    <myJumbotron />
     <!-- footer -->
     <topFooter />
     <myFooter />
@@ -12,7 +12,7 @@
 
 <script>
 import myHeader from './components/Header.vue'
-import myMain from './components/Main.vue'
+import myJumbotron from './components/Jumbotron.vue'
 import topFooter from './components/topFooter.vue'
 import myFooter from './components/Footer.vue'
 
@@ -20,7 +20,7 @@ export default {
   name: 'App',
   components: {
     myHeader,
-    myMain,
+    myJumbotron,
     topFooter,
     myFooter,
   }
