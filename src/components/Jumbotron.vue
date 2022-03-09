@@ -40,7 +40,7 @@ export default {
     font-size: 16px;
     font-weight: 700;
     position: absolute;
-    top: 385px;
+    top: 380px;
     left: 0;
   }
 

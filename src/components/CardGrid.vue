@@ -5,8 +5,10 @@
         <!-- componente ciclato -->
         <myCard v-for="(info, i) in cardInfo" :key="i"
             :cardImg="info.thumb"
-            :cardText="info.series" />
-    </div>
+            :cardText="info.series"
+            :cardPrice="info.price" />
+        </div>
+        <button>{{ buttonText }}</button>
     </section>
     
 </template>
@@ -23,6 +25,8 @@ export default {
 
     data(){
         return{
+
+            buttonText: 'load more',
             cardInfo: [
                     {
                         "thumb": "https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2018/09/AC1000_DLX_162-001_HD_5ba13723281ab0.37845353.jpg?itok=ZsI-C5eX",
@@ -96,7 +100,7 @@ export default {
                         "series": "Catwoman",
                         "type": "graphic novel"
                     }
-                    ]
+                    ],
         }
     }
 }
@@ -106,10 +110,21 @@ export default {
 
     .grid-section{
         background-color: #1C1C1C;
+        text-align: center;
+
+        & button{
+            border: none;
+            color: white;
+            background-color: #0282F9;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            padding: 8px 25px;
+            font-size: 12px;
+        }
     }
 
     .container{
-        padding: 60px 10px;
+        padding: 60px 10px 40px 10px;
         display: flex;
         justify-content: center;
         align-items: flex-start;
