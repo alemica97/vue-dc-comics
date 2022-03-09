@@ -4,6 +4,7 @@
     <myHeader />
     <!-- main -->
     <myJumbotron />
+    <cardGrid />
     <!-- footer -->
     <topFooter />
     <myFooter />
@@ -13,6 +14,7 @@
 <script>
 import myHeader from './components/Header.vue'
 import myJumbotron from './components/Jumbotron.vue'
+import cardGrid from './components/CardGrid.vue'
 import topFooter from './components/topFooter.vue'
 import myFooter from './components/Footer.vue'
 
@@ -21,6 +23,7 @@ export default {
   components: {
     myHeader,
     myJumbotron,
+    cardGrid,
     topFooter,
     myFooter,
   }
