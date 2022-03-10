@@ -2,13 +2,16 @@
 
     <section class="grid-section">
         <div class="container">
-        <!-- componente ciclato -->
-        <myCard v-for="(info, i) in cardInfo" :key="i"
-            :cardImg="info.thumb"
-            :cardText="info.series"
-            :cardPrice="info.price" />
-        </div>
-        <button>{{ buttonText }}</button>
+            <button class="jumbo-button">{{buttonText}}</button>
+            <!-- componente ciclato -->
+            <div class="grid-wrapper">
+                <myCard v-for="(info, i) in cardInfo" :key="i"
+                :cardImg="info.thumb"
+                :cardText="info.series"
+                :cardPrice="info.price" />
+            </div>
+            </div>
+            <button class="load-btn">{{ buttonTextLoad }}</button>
     </section>
     
 </template>
@@ -26,7 +29,8 @@ export default {
     data(){
         return{
 
-            buttonText: 'load more',
+            buttonText: 'current series',
+            buttonTextLoad: 'load more',
             cardInfo: [
                     {
                         "thumb": "https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2018/09/AC1000_DLX_162-001_HD_5ba13723281ab0.37845353.jpg?itok=ZsI-C5eX",
@@ -110,9 +114,9 @@ export default {
 
     .grid-section{
         background-color: #1C1C1C;
-        text-align: center;
+        position: relative;
 
-        & button{
+        .load-btn{
             border: none;
             color: white;
             background-color: #0282F9;
@@ -120,16 +124,31 @@ export default {
             margin-bottom: 20px;
             padding: 8px 25px;
             font-size: 12px;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
         }
 
-        & button:hover{
+        .load-btn:hover{
             cursor: pointer;
-            transform: scale(1.05, 1.05);
+            transform: translateX(-50%) scale(1.05, 1.05);
         }
     }
 
-    .container{
-        padding: 60px 10px 40px 10px;
+  .jumbo-button{
+    background-color: #0282F9;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    transform: translateY(-50%);
+  }
+
+    .grid-wrapper{
+        padding: 40px 10px 60px 10px;
         display: flex;
         justify-content: center;
         align-items: flex-start;
